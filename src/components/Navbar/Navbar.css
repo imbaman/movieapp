@@ -1,0 +1,35 @@
+nav {
+  background-color: #1b1717;
+  z-index: 999;
+  /* position: fixed; */
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2em 2em;
+  transition: all 0.3s ease-in-out;
+}
+nav .logo {
+  width: 50px;
+}
+nav input {
+  height: 30px;
+  border-radius: 5px;
+  padding: 6px 12px;
+  background-color: transparent;
+  border: none;
+  color: aliceblue;
+}
+nav input:focus {
+  outline: none;
+}
+.search {
+  border: aliceblue solid 3px;
+  display: flex;
+  align-items: center;
+}
+.search-icon {
+  color: aliceblue;
+  margin-right: 5px;
+}
