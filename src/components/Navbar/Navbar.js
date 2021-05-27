@@ -3,16 +3,31 @@ import { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import logo from "./logo.png";
 import { Link, useHistory, withRouter } from "react-router-dom";
+import { requests, instance } from "../../api";
 
 const Navbar = ({ search, setSearch }) => {
   const [movie, setMovie] = useState("");
 
   let history = useHistory();
 
-  const getMovies = () => {
+  const getMovies = async (asd) => {
+    console.log(asd);
+    if (asd.length <= 1) {
+      history.push("/");
+      return;
+    }
+
+    const response = await instance
+      .get(`${requests.searchMovies}?query=${asd}`)
+      .catch((err) => {
+        console.log(err);
+      });
+
+    setMovie(response.data.results);
     history.push({
       pathname: "/search",
     });
+    console.log(response.data.results);
   };
 
   const handleOnSubmit = (e) => {
@@ -21,7 +36,7 @@ const Navbar = ({ search, setSearch }) => {
   };
   const handleChange = (e) => {
     setSearch(e.target.value);
-    getMovies();
+    getMovies(search);
   };
   return (
     <nav>
