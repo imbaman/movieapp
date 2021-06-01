@@ -14,21 +14,30 @@ const SearchResult = ({ search }) => {
         Top Results for <span className='bold'>"{search}"</span>
       </h2>
       {movieData ? (
-        movieData.map((movie) => (
-          <div className='searchResult'>
-            <div className='searchResult__img'>
-              <img src={img + movie.poster_path} alt='poster' />
+        movieData
+          .filter((movie) => {
+            return movie.poster_path !== null || "" || undefined;
+          })
+          .map((movie) => (
+            <div className='searchResult'>
+              <div className='searchResult__img'>
+                <img src={img + movie.poster_path} alt='poster' />
+              </div>
+              <div className='searchResult__text'>
+                <h3>{movie.title}</h3>
+                <small>{movie.release_date}</small>
+                <p>{movie.overview}</p>
+              </div>
+              <div className='searchResult__score'>
+                <p
+                  className={`score
+                  ${movie.vote_average > 6 ? "score-up" : "score-low"}
+                `}>
+                  {movie.vote_average}
+                </p>
+              </div>
             </div>
-            <div className='searchResult__text'>
-              <h3>{movie.title}</h3>
-              <small>{movie.release_date}</small>
-              <p>{movie.overview}</p>
-            </div>
-            <div className='searchResult__score'>
-              <p className='score'>{movie.vote_average}</p>
-            </div>
-          </div>
-        ))
+          ))
       ) : (
         <div>
           <p>no data</p>

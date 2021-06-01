@@ -26,6 +26,8 @@ const Navbar = ({ search, setSearch }) => {
     setMovie(response.data.results);
     history.push({
       pathname: "/search",
+      search: asd,
+      movies: movie,
     });
     console.log(response.data.results);
   };

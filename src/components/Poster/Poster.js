@@ -28,12 +28,14 @@ const Poster = () => {
           style={{
             backgroundImage: `url(${img_api}${movie.backdrop_path})`,
           }}>
-          <div className='banner__contents'>
+          <div className='banner__content'>
             <h1 className='banner__title'>{movie?.title}</h1>
-            <button className='banner__button'>Details</button>{" "}
             <h1 className='banner__overview'>{movie.overview}</h1>
+            <div className='button-container'>
+              {" "}
+              <button className='banner__button'>Details</button>{" "}
+            </div>
           </div>
-          <div className='banner__fadeBottom ' />
         </header>
       ) : (
         <div style={{ maxWidth: "100%", height: "80vh" }}>
