@@ -1,11 +1,10 @@
 import { useState } from "react";
 import Navbar from "./Navbar/Navbar";
-import Poster from "./Poster/Poster";
 import "./App.css";
 import MovieList from "./MovieList/MovieList";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import SearchResult from "./SearchResult/SearchResult";
-
+import MovieDetails from "./MovieDetails/MovieDetails";
 function App() {
   const [search, setSearch] = useState("");
   return (
@@ -16,8 +15,9 @@ function App() {
           <Route path='/' exact render={(props) => <MovieList {...props} />} />
           <Route
             path='/search'
-            render={(props) => <SearchResult {...props} />}
+            render={(props) => <SearchResult {...props} search={search} />}
           />
+          <Route path='/movie/:id' component={MovieDetails} />
         </Switch>
       </div>
     </BrowserRouter>
