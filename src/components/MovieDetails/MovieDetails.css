@@ -1,0 +1,35 @@
+.details {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.details > div {
+  margin: 5em;
+}
+
+.details h3 {
+  font-size: 40px;
+  text-align: center;
+}
+
+.details p:last-child {
+  margin-top: 30px;
+  font-size: 12px;
+}
+.details .score {
+  font-size: 30px;
+}
+/* .details p {
+  border-top: 1px solid #5c423d;
+} */
+.details__left {
+  /* width: 600px; */
+  flex: 0 1 400px;
+  /* grow shrink basis */
+}
+
+.score-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
