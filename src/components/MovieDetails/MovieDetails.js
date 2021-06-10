@@ -33,7 +33,6 @@ const MovieDetails = ({ match }) => {
         <p>RELEASE DATE : {movie.release_date}</p>
       </div>
       <div className='details__right'>
-        movie trailer?
         <img src={img + movie.poster_path} alt='' />
       </div>
     </div>

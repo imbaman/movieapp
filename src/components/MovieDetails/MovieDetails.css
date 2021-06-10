@@ -1,15 +1,17 @@
 .details {
+  padding: 2em 0 2em 0;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 .details > div {
-  margin: 5em;
+  margin: 4em;
 }
 
 .details h3 {
-  font-size: 40px;
-  text-align: center;
+  font-size: 30px;
+  margin-bottom: 15px;
+  /* text-align: center; */
 }
 
 .details p:last-child {
@@ -17,19 +19,22 @@
   font-size: 12px;
 }
 .details .score {
-  font-size: 30px;
+  font-size: 35px;
 }
 /* .details p {
   border-top: 1px solid #5c423d;
 } */
+
 .details__left {
-  /* width: 600px; */
+  padding: 20px;
   flex: 0 1 400px;
+  border-top: 3px solid #f4f4f4;
+  border-bottom: 3px solid #f4f4f4;
   /* grow shrink basis */
 }
 
 .score-container {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  align-items: baseline;
+  justify-content: space-between;
 }

@@ -5,6 +5,8 @@ import MovieList from "./MovieList/MovieList";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import SearchResult from "./SearchResult/SearchResult";
 import MovieDetails from "./MovieDetails/MovieDetails";
+import Footer from "./Footer/Footer";
+
 function App() {
   const [search, setSearch] = useState("");
   return (
@@ -19,6 +21,7 @@ function App() {
           />
           <Route path='/movie/:id' component={MovieDetails} />
         </Switch>
+        <Footer />
       </div>
     </BrowserRouter>
   );
