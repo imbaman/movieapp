@@ -1,5 +1,6 @@
 import "./Poster.css";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { requests, instance } from "../../api";
 
 const Poster = () => {
@@ -32,8 +33,9 @@ const Poster = () => {
             <h1 className='banner__title'>{movie?.title}</h1>
             <h1 className='banner__overview'>{movie.overview}</h1>
             <div className='button-container'>
-              {" "}
-              <button className='banner__button'>Details</button>{" "}
+              <Link to={`/movie/${movie.id}`}>
+                <button className='banner__button'>Details</button>
+              </Link>
             </div>
           </div>
         </header>

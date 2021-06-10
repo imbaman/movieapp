@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { instance } from "../../api";
+import { Link } from "react-router-dom";
 import "./MovieRow.css";
 
 const MovieRow = ({ genre, api }) => {
@@ -25,7 +26,10 @@ const MovieRow = ({ genre, api }) => {
         {movie
           .map((movie) => (
             <div className='movie'>
-              <img src={img_api + movie.poster_path} alt='' />
+              <Link to={`/movie/${movie.id}`}>
+                <img src={img_api + movie.poster_path} alt='' />
+              </Link>
+
               <p>{movie.vote_average}</p>
               <p>{movie.title}</p>
             </div>
