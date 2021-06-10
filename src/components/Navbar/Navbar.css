@@ -24,8 +24,9 @@ nav input {
 nav input:focus {
   outline: none;
 }
+
 .search {
-  border: aliceblue solid 3px;
+  border: #f5a962 solid 3px;
   display: flex;
   align-items: center;
 }
