@@ -4,9 +4,10 @@ import "./App.css";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import SearchResult from "./SearchResult/SearchResult";
-import MovieDetails from "./MovieDetails/MovieDetails";
+// import MovieDetails from "./MovieDetails/MovieDetails";
 import Footer from "./Footer/Footer";
 
+const MovieDetails = React.lazy(() => import("./MovieDetails/MovieDetails"));
 const MovieList = React.lazy(() => import("./MovieList/MovieList"));
 
 function App() {
@@ -33,12 +34,12 @@ function App() {
               exact
               render={(props) => <MovieList {...props} />}
             />
+            <Route
+              path='/search'
+              render={(props) => <SearchResult {...props} search={search} />}
+            />
+            <Route path='/movie/:id' component={MovieDetails} />
           </Suspense>
-          <Route
-            path='/search'
-            render={(props) => <SearchResult {...props} search={search} />}
-          />
-          <Route path='/movie/:id' component={MovieDetails} />
         </Switch>
         <Footer />
       </div>
