@@ -9,7 +9,9 @@ Demo:
 Project is created with:
 
 - React
-- xxx
+- React Router
+- axios
+- CSS without dependencies
 
 ## Setup
 
