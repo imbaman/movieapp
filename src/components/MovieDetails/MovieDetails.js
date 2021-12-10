@@ -7,9 +7,11 @@ const MovieDetails = ({ match }) => {
   const img = "https://image.tmdb.org/t/p/w185";
   useEffect(() => {
     const fetchMovies = async () => {
-      const response = await instance.get(`/movie/${match.params.id}`);
+      const response = await instance.get(
+        `/movie/${match.params.id}?&append_to_response=videos,similar,credits`
+      );
       setMovie(response.data);
-      console.log("saddas");
+      console.log(response.data);
       return response;
     };
     fetchMovies();
