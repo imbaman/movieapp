@@ -34,7 +34,6 @@ const MovieDetails = ({ match }) => {
         <div className='details__left'>
           <h3>{movie.title}</h3>
           <div className='score-container'>
-            {" "}
             <p
               className={`score  ${
                 movie.vote_average > 6 ? "score-up" : "score-low"
@@ -43,7 +42,9 @@ const MovieDetails = ({ match }) => {
             </p>
             <p className='border'>based on {movie.vote_count} counts</p>
           </div>
-
+          <div className='desc-container'>
+            <p>{movie.overview}</p>
+          </div>
           <p>RELEASE DATE : {movie.release_date}</p>
         </div>
         <div className='details__right'>
