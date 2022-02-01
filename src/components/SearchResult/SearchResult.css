@@ -31,3 +31,12 @@
 .score-low {
   background-color: #f05945;
 }
+
+.no-results {
+  text-align: center;
+  height: 50vh;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
